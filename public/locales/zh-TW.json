@@ -1,0 +1,83 @@
+{
+  "name": "Barry",
+  "lang.label": "語言",
+  "theme.light": "淺色",
+  "theme.dark": "深色",
+  "theme.toggle": "切換為{mode}主題",
+  "meta.title": "Barry，永遠",
+  "meta.description": "紀念傑克羅素㹴 Barry，2011–2026。",
+  "hero.breed": "傑克羅素㹴（女生）",
+  "hero.tagline": "永遠是我們的乖女孩。",
+  "age.template": "牠陪伴了我們{y}{m}{d}。",
+  "unit.year_one": "{n} 年",
+  "unit.year_other": "{n} 年",
+  "unit.month_one": "{n} 個月",
+  "unit.month_other": "{n} 個月",
+  "unit.day_one": "{n} 天",
+  "unit.day_other": "{n} 天",
+  "section.story": "牠的故事",
+  "section.loved": "牠喜歡的事物",
+  "section.timeline": "牠的一生",
+  "section.gallery": "相簿",
+  "gallery.empty": "照片與影片即將加入。",
+  "common.close": "關閉",
+  "lightbox.prev": "上一張",
+  "lightbox.next": "下一張",
+  "messages.empty": "成為第一位留言的人吧。",
+  "form.name": "你的名字",
+  "form.message": "寫下想對 Barry 說的話…",
+  "form.submit": "送出",
+  "form.sending": "送出中…",
+  "form.thanks": "謝謝你。留言經審核後會顯示在這裡。",
+  "form.error": "抱歉，發生錯誤，請稍後再試。",
+  "form.limit": "留言次數過多，請稍後再試。",
+  "form.tooLong": "留言太長了，請控制在 {n} 字以內。",
+  "form.full": "留言板已滿，目前無法接受新留言。感謝大家給予的溫暖。",
+  "form.busy": "等待審核的照片太多，請稍後再試，或先不附照片留言。",
+  "form.pending": "目前等待審核的留言太多，暫時無法收到新的留言，請稍後再試。",
+  "section.messages": "親友的留言",
+  "form.photo": "附上 Barry 的照片（選填）",
+  "form.photoRemove": "移除照片",
+  "form.badPhoto": "不支援此檔案，請使用 JPG、PNG、WebP 或 GIF。",
+  "form.photoTooLarge": "照片太大了，請選擇小於 8 MB 的照片。",
+  "pagination.label": "分頁",
+  "pagination.prev": "上一頁",
+  "pagination.next": "下一頁",
+  "pagination.page": "第 {n} 頁",
+  "hero.memory": "懷念我們摯愛的 Barry",
+  "hero.scroll": "向下捲動",
+  "nav.story": "故事",
+  "nav.photos": "相簿",
+  "nav.memories": "回憶",
+  "nav.messages": "留言",
+  "social.instagram": "到 Instagram 看更多 Barry",
+  "section.diary": "與Barry的回憶",
+  "diary.open": "閱讀全文",
+  "diary.play": "播放影片",
+  "comments.edited": "（{date} 已編輯）",
+  "diary.map": "在地圖中開啟",
+  "footer": "紀念 Barry · 2011 – 2026",
+  "content": {
+    "story": [
+      "Barry 於 2011 年 8 月 20 日出生，用十五年的活力、倔強與愛填滿了我們的日子。身形嬌小，心卻無比寬大，完完全全是一隻傑克羅素。",
+      "每一個平凡的日子裡都有牠，這些日子也成了我們最珍貴的回憶。"
+    ],
+    "loved": [
+      "追逐所有會動的東西",
+      "地板上的陽光角落",
+      "長長的散步",
+      "零食，永遠都想吃零食"
+    ],
+    "timeline": [
+      {
+        "year": "2011",
+        "text": "8 月 20 日，Barry 出生。"
+      },
+      {
+        "year": "2026",
+        "text": "10 月 4 日，牠走過了彩虹橋。"
+      }
+    ],
+    "tribute": "直到我們在彩虹橋的盡頭重逢，願你盡情奔跑，親愛的女孩。"
+  }
+}

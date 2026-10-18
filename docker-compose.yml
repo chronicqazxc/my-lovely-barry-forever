@@ -1,0 +1,45 @@
+# Production stack: the app + Caddy (automatic HTTPS). Used on the VM and, with DOMAIN=localhost, locally.
+#   docker compose up -d --no-build      # on the VM (the image is built on your computer and shipped, see deploy/deploy.sh)
+#   docker compose up --build            # locally, builds the image too
+# `name` is pinned on purpose: the data volume becomes "barry_barry_data" no matter which folder this runs
+# from. Without it, deploying from a differently named folder would silently start with an EMPTY volume.
+name: barry
+
+services:
+  barry:
+    image: barry:latest
+    build: .
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      - NODE_OPTIONS=--max-old-space-size=192   # keep Node small on a 1 GB VM
+    mem_limit: 450m
+    security_opt:
+      - no-new-privileges:true                  # the app can never gain more rights than user "node"
+    cap_drop:
+      - ALL                                     # a Node app on port 3000 needs no special Linux capabilities
+    volumes:
+      - barry_data:/app/data                    # db.json + uploads/ (survives rebuilds and redeploys)
+    expose:
+      - "3000"                                  # reachable only by Caddy, not published to the internet
+
+  caddy:
+    image: caddy:2-alpine
+    restart: unless-stopped
+    ports:
+      - "80:80"      # needed for the HTTPS certificate challenge and the HTTP -> HTTPS redirect
+      - "443:443"
+      - "443:443/udp"
+    environment:
+      - DOMAIN=${DOMAIN:?set DOMAIN in .env}
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data                        # issued certificates (don't lose these: rate limits)
+      - caddy_config:/config
+    depends_on:
+      - barry
+
+volumes:
+  barry_data:
+  caddy_data:
+  caddy_config:

@@ -1,0 +1,83 @@
+{
+  "name": "ベリー",
+  "lang.label": "言語",
+  "theme.light": "ライト",
+  "theme.dark": "ダーク",
+  "theme.toggle": "{mode}テーマに切り替え",
+  "meta.title": "ベリー、永遠に",
+  "meta.description": "ジャック・ラッセル・テリア、ベリーの思い出に。2011〜2026。",
+  "hero.breed": "ジャック・ラッセル・テリア（女の子）",
+  "hero.tagline": "いつまでも、私たちの自慢の娘。",
+  "age.template": "{y}{m}{d}を私たちと一緒に過ごしてくれました。",
+  "unit.year_one": "{n}年",
+  "unit.year_other": "{n}年",
+  "unit.month_one": "{n}か月",
+  "unit.month_other": "{n}か月",
+  "unit.day_one": "{n}日",
+  "unit.day_other": "{n}日",
+  "section.story": "ベリーについて",
+  "section.loved": "大好きだったもの",
+  "section.timeline": "ベリーの歩み",
+  "section.gallery": "ギャラリー",
+  "gallery.empty": "写真と動画は近日中に追加します。",
+  "common.close": "閉じる",
+  "lightbox.prev": "前へ",
+  "lightbox.next": "次へ",
+  "messages.empty": "最初のメッセージを残してください。",
+  "form.name": "お名前",
+  "form.message": "ベリーへのメッセージを書いてください…",
+  "form.submit": "送信",
+  "form.sending": "送信中…",
+  "form.thanks": "ありがとうございます。確認後にメッセージが表示されます。",
+  "form.error": "申し訳ありません。エラーが発生しました。しばらくしてからもう一度お試しください。",
+  "form.limit": "送信回数が多すぎます。しばらくしてからお試しください。",
+  "form.tooLong": "メッセージが長すぎます。{n}文字以内でお願いします。",
+  "form.full": "メッセージの受付数が上限に達したため、現在は新しい投稿をお受けできません。たくさんの温かいお言葉をありがとうございました。",
+  "form.busy": "確認待ちの写真が多すぎます。しばらくしてからお試しいただくか、写真なしで送信してください。",
+  "form.pending": "確認待ちのメッセージが多いため、現在は新しく受け付けられません。しばらくしてからもう一度お試しください。",
+  "section.messages": "みなさまからのメッセージ",
+  "form.photo": "ベリーの写真を添付（任意）",
+  "form.photoRemove": "写真を削除",
+  "form.badPhoto": "対応していない画像です（JPG、PNG、WebP、GIF）。",
+  "form.photoTooLarge": "写真が大きすぎます。8MB未満のものを選んでください。",
+  "pagination.label": "ページ",
+  "pagination.prev": "前へ",
+  "pagination.next": "次へ",
+  "pagination.page": "{n}ページ",
+  "hero.memory": "愛しいベリーを偲んで",
+  "hero.scroll": "スクロール",
+  "nav.story": "ストーリー",
+  "nav.photos": "ギャラリー",
+  "nav.memories": "思い出",
+  "nav.messages": "メッセージ",
+  "social.instagram": "Instagramでもっとベリーに会う",
+  "section.diary": "ベリーちゃんとの思い出",
+  "diary.open": "全文を読む",
+  "diary.play": "動画を再生",
+  "comments.edited": "（{date} 編集）",
+  "diary.map": "地図で開く",
+  "footer": "ベリーの思い出に · 2011 – 2026",
+  "content": {
+    "story": [
+      "ベリーは2011年8月20日に生まれ、15年のあいだ、元気と頑固さと愛情で私たちの毎日を満たしてくれました。体は小さくても心は大きく、まさにジャック・ラッセルそのものでした。",
+      "何気ない毎日のどの場面にもベリーがいて、その日々が私たちの一番大切な思い出になりました。"
+    ],
+    "loved": [
+      "動くものは何でも追いかける",
+      "床の日だまり",
+      "長いお散歩",
+      "おやつ、いつでもおやつ"
+    ],
+    "timeline": [
+      {
+        "year": "2011",
+        "text": "8月20日、ベリー誕生。"
+      },
+      {
+        "year": "2026",
+        "text": "10月4日、虹の橋を渡りました。"
+      }
+    ],
+    "tribute": "虹の橋のたもとでまた会う日まで、自由に走っていてね、愛しい子。"
+  }
+}

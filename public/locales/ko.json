@@ -1,0 +1,83 @@
+{
+  "name": "배리",
+  "lang.label": "언어",
+  "theme.light": "라이트",
+  "theme.dark": "다크",
+  "theme.toggle": "{mode} 테마로 전환",
+  "meta.title": "배리, 영원히",
+  "meta.description": "잭 러셀 테리어 배리를 기억하며. 2011–2026.",
+  "hero.breed": "잭 러셀 테리어 (여아)",
+  "hero.tagline": "영원한 우리 착한 아이.",
+  "age.template": "{y} {m} {d} 동안 우리와 함께했어요.",
+  "unit.year_one": "{n}년",
+  "unit.year_other": "{n}년",
+  "unit.month_one": "{n}개월",
+  "unit.month_other": "{n}개월",
+  "unit.day_one": "{n}일",
+  "unit.day_other": "{n}일",
+  "section.story": "배리 이야기",
+  "section.loved": "배리가 좋아한 것들",
+  "section.timeline": "배리의 삶",
+  "section.gallery": "갤러리",
+  "gallery.empty": "사진과 영상은 곧 추가될 예정이에요.",
+  "common.close": "닫기",
+  "lightbox.prev": "이전",
+  "lightbox.next": "다음",
+  "messages.empty": "첫 번째 메시지를 남겨 주세요.",
+  "form.name": "이름",
+  "form.message": "배리에게 전하고 싶은 말을 남겨 주세요…",
+  "form.submit": "보내기",
+  "form.sending": "보내는 중…",
+  "form.thanks": "감사해요. 검토 후 메시지가 게시돼요.",
+  "form.error": "죄송해요. 문제가 발생했어요. 잠시 후 다시 시도해 주세요.",
+  "form.limit": "메시지를 너무 많이 보냈어요. 잠시 후 다시 시도해 주세요.",
+  "form.tooLong": "메시지가 너무 길어요. {n}자 이내로 작성해 주세요.",
+  "form.full": "방명록이 가득 차서 지금은 새 메시지를 받을 수 없어요. 따뜻한 마음 모두 감사해요.",
+  "form.busy": "검토를 기다리는 사진이 너무 많아요. 잠시 후 다시 시도하시거나 사진 없이 메시지만 보내 주세요.",
+  "form.pending": "검토를 기다리는 메시지가 많아서 지금은 새 메시지를 받을 수 없어요. 잠시 후 다시 시도해 주세요.",
+  "section.messages": "가족과 친구들이 남긴 메시지",
+  "form.photo": "배리 사진 첨부 (선택)",
+  "form.photoRemove": "사진 삭제",
+  "form.badPhoto": "지원하지 않는 이미지예요 (JPG, PNG, WebP, GIF).",
+  "form.photoTooLarge": "사진이 너무 커요. 8MB 이하의 사진을 선택해 주세요.",
+  "pagination.label": "페이지",
+  "pagination.prev": "이전",
+  "pagination.next": "다음",
+  "pagination.page": "{n}페이지",
+  "hero.memory": "사랑하는 배리를 기억하며",
+  "hero.scroll": "스크롤",
+  "nav.story": "이야기",
+  "nav.photos": "갤러리",
+  "nav.memories": "추억",
+  "nav.messages": "메시지",
+  "social.instagram": "인스타그램에서 배리 더 보기",
+  "section.diary": "배리와의 추억",
+  "diary.open": "전체 보기",
+  "diary.play": "영상 재생",
+  "comments.edited": "({date} 수정됨)",
+  "diary.map": "지도에서 열기",
+  "footer": "배리를 기억하며 · 2011 – 2026",
+  "content": {
+    "story": [
+      "배리는 2011년 8월 20일에 태어나 15년 동안 에너지와 고집, 그리고 사랑으로 우리의 나날을 가득 채워 주었어요. 몸집은 작아도 마음은 누구보다 컸던, 영락없는 잭 러셀이었어요.",
+      "평범한 하루하루마다 배리가 있었고, 그 날들이 우리의 가장 소중한 추억이 되었어요."
+    ],
+    "loved": [
+      "움직이는 건 뭐든 쫓아가기",
+      "바닥의 햇살 자리",
+      "긴 산책",
+      "간식, 언제나 간식"
+    ],
+    "timeline": [
+      {
+        "year": "2011",
+        "text": "8월 20일, 배리가 태어났어요."
+      },
+      {
+        "year": "2026",
+        "text": "10월 4일, 무지개다리를 건넜어요."
+      }
+    ],
+    "tribute": "무지개다리 끝에서 다시 만날 때까지, 마음껏 달리렴, 사랑하는 아이야."
+  }
+}

@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Barry · Admin</title>
+  <script>
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem('barry-theme'); } catch (e) {}
+      if (t !== 'light' && t !== 'dark') t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.dataset.theme = t;
+    })();
+  </script>
+  <link rel="stylesheet" href="/css/theme.css">
+  <link rel="stylesheet" href="admin.css">
+  <link rel="stylesheet" href="/theme-overrides.css" id="theme-css"><!-- admin follows the live site theme -->
+  <link rel="icon" href="data:,">
+</head>
+<body>
+  <section id="login" hidden>
+    <form id="login-form" class="card narrow">
+      <h1>Barry · Admin</h1>
+      <input type="password" name="password" placeholder="Password" autocomplete="current-password" required autofocus>
+      <button type="submit">Sign in</button>
+      <p class="msg" id="login-msg" role="alert"></p>
+    </form>
+  </section>
+
+  <div id="app" hidden>
+    <header class="bar">
+      <strong>Barry · Admin</strong>
+      <nav>
+        <button data-tab="content" class="tab">Content</button>
+        <button data-tab="photos" class="tab">Gallery</button>
+        <button data-tab="comments" class="tab">Comments <span id="pending-badge" class="badge" hidden></span></button>
+        <button data-tab="diary" class="tab">Memories</button>
+        <button data-tab="theme" class="tab">Theme</button>
+      </nav>
+      <div class="bar-actions">
+        <a href="/" target="_blank">View site ↗</a>
+        <button id="theme" type="button" aria-label="Toggle theme"></button>
+        <button id="pw-open" type="button" title="Change password">Password</button>
+        <button id="logout" type="button">Sign out</button>
+      </div>
+    </header>
+
+    <div class="banner" id="theme-banner" hidden>
+      The live theme has too little text contrast to read comfortably, so the admin is using its default colours. Fix the theme under “Theme”.
+    </div>
+
+    <main>
+      <section id="tab-photos" hidden>
+        <div class="card avatar-card">
+          <div class="avatar" id="avatar-preview"></div>
+          <div>
+            <h2>Avatar</h2>
+            <p class="hint">The round photo at the top of the site. Upload a new one here, or pick a gallery photo below with “Use as avatar”. “Adjust photo” lets you move and resize it inside the circle.</p>
+            <div class="row">
+              <label class="filebtn primary">Upload new avatar
+                <input id="avatar-file" type="file" accept="image/jpeg,image/png,image/webp,image/gif" hidden>
+              </label>
+              <button id="avatar-focus" type="button" class="ghost" hidden>Adjust photo</button>
+              <button id="avatar-remove" type="button" class="ghost" hidden>Remove</button>
+              <span class="msg" id="avatar-msg" role="status"></span>
+            </div>
+          </div>
+        </div>
+        <div class="card avatar-card">
+          <div class="avatar" id="closing-preview"></div>
+          <div>
+            <h2>Closing photo</h2>
+            <p class="hint">A small round photo above the farewell quote on the last page. Pick a calm one. Upload here, or choose “Use as closing photo” on a gallery photo below. “Adjust photo” lets you move and resize it inside the circle. Leave empty to show only the quote.</p>
+            <div class="row">
+              <label class="filebtn primary">Upload closing photo
+                <input id="closing-file" type="file" accept="image/jpeg,image/png,image/webp,image/gif" hidden>
+              </label>
+              <button id="closing-focus" type="button" class="ghost" hidden>Adjust photo</button>
+              <button id="closing-remove" type="button" class="ghost" hidden>Remove</button>
+              <span class="msg" id="closing-msg" role="status"></span>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <label class="drop" id="drop">
+            <input id="file" type="file" accept="image/jpeg,image/png,image/webp,image/gif" multiple hidden>
+            <span>Click or drop photos here to upload</span>
+          </label>
+          <p class="msg" id="gallery-count"></p>
+          <p class="msg" id="upload-msg" role="status"></p>
+        </div>
+        <form class="card row" id="video-form">
+          <label class="grow">Add a YouTube video
+            <input type="url" id="video-url" placeholder="https://www.youtube.com/watch?v=… or https://youtu.be/…" required>
+          </label>
+          <button type="submit" class="primary">Add video</button>
+          <span class="msg" id="video-msg" role="status"></span>
+        </form>
+        <p class="hint">Each photo or video can have a short description per language. It appears under it on the site. Remember to press “Save captions”. Drag a card by its “Drag to reorder” bar to change the order (or use the arrow buttons).</p>
+        <ul class="photos" id="photos"></ul>
+      </section>
+
+      <section id="tab-comments" hidden>
+        <p class="hint" id="comments-count"></p>
+        <ul class="list" id="comments"></ul>
+      </section>
+
+      <section id="tab-content" hidden>
+        <div class="card">
+          <label>Language <select id="content-lang"></select></label>
+          <p class="hint">The fields show what visitors see now. Edit and save to change it. “Reset to defaults” discards your edits for this language.</p>
+          <label>Message on the first page (small line above the name)
+            <input id="c-memory" maxlength="80"></label>
+          <label>Name on the first page
+            <input id="c-name" maxlength="40"></label>
+          <label>Story (separate paragraphs with a blank line)
+            <textarea id="c-story" rows="8"></textarea></label>
+          <label>Things she loved (one per line)
+            <textarea id="c-loved" rows="5"></textarea></label>
+          <div class="tl-editor">
+            <strong class="tl-title">Timeline</strong>
+            <p class="hint">Each entry has a year (the title, required), an optional month and day (shown under the year; a day needs a month) and the text. Entries show in this order.</p>
+            <div id="c-timeline-list"></div>
+            <div class="row">
+              <button id="tl-add" type="button" class="ghost">+ Add entry</button>
+              <button id="tl-sort" type="button" class="ghost">Sort by date</button>
+            </div>
+          </div>
+          <label>Tribute quote
+            <textarea id="c-tribute" rows="3"></textarea></label>
+          <div class="row">
+            <button id="content-save" type="button">Save</button>
+            <button id="content-reset" type="button" class="ghost">Reset to defaults</button>
+            <span class="msg" id="content-msg" role="status"></span>
+          </div>
+        </div>
+      </section>
+      <section id="tab-diary" hidden>
+        <div class="row between" id="diary-intro">
+          <p class="hint">Write special memories of Barry. They appear under “Her Story”. If you leave a language empty, visitors reading that language see the first language you did write.</p>
+          <button id="diary-new" type="button" class="primary">+ New memory</button>
+        </div>
+        <p class="hint" id="diary-count"></p>
+        <div id="diary-editor"></div>
+        <ul class="list" id="diary-list"></ul>
+      </section>
+
+      <section id="tab-theme" hidden>
+        <div class="row between">
+          <p class="hint">Pick the theme visitors see. Built-in themes are read-only; duplicate one to make it your own, or start a new theme.</p>
+          <button id="theme-new" type="button" class="primary">+ New theme</button>
+        </div>
+        <ul class="themes" id="themes"></ul>
+        <div id="theme-editor"></div>
+        <p class="msg" id="theme-msg" role="status"></p>
+
+        <h2 class="subhead">Icons</h2>
+        <p class="hint">Two small icons on the site. Pick a built-in one, type an emoji, or upload your own picture (a square image with a transparent background works best).</p>
+        <div class="icon-grid" id="icon-slots"></div>
+      </section>
+    </main>
+  </div>
+
+  <dialog class="pwd" id="pw-dialog">
+    <form id="pw-form">
+      <h2>Change password</h2>
+      <p class="hint" id="pw-hint"></p>
+      <label>Current password
+        <input type="password" name="current" autocomplete="current-password" required>
+      </label>
+      <label>New password <span class="hint">(at least 10 characters)</span>
+        <input type="password" name="next" autocomplete="new-password" minlength="10" required>
+      </label>
+      <label>New password again
+        <input type="password" name="again" autocomplete="new-password" minlength="10" required>
+      </label>
+      <div class="row">
+        <button type="submit" class="primary">Save new password</button>
+        <button type="button" class="ghost" id="pw-cancel">Cancel</button>
+        <span class="msg" id="pw-msg" role="status"></span>
+      </div>
+      <p class="hint">Saving signs out every other browser that is signed in. Use a password manager to store it.</p>
+    </form>
+  </dialog>
+
+  <dialog class="pwd confirm" id="confirm-dialog" role="alertdialog" aria-labelledby="confirm-title" aria-describedby="confirm-text">
+    <h2 id="confirm-title"></h2>
+    <p id="confirm-text"></p>
+    <div class="row">
+      <button type="button" class="ghost" id="confirm-no">Cancel</button>
+      <button type="button" class="danger" id="confirm-yes"></button>
+    </div>
+  </dialog>
+
+  <dialog class="pwd busy" id="busy-dialog" aria-live="polite">
+    <h2 id="busy-title">Uploading…</h2>
+    <progress id="busy-bar" max="100"></progress>
+    <p class="hint" id="busy-text"></p>
+  </dialog>
+
+  <dialog class="pwd focus" id="focus-dialog">
+    <h2>Adjust photo</h2>
+    <p class="hint">Drag the photo to move it, and use the slider to make it bigger or smaller. What you see in the circle is what visitors see.</p>
+    <div class="focus-view" id="focus-view"><img id="focus-img" alt="" draggable="false"></div>
+    <label class="focus-zoom">Size <input id="focus-zoom" type="range" min="1" max="3" step="0.02" value="1"></label>
+    <div class="row">
+      <button type="button" class="primary" id="focus-save">Save</button>
+      <button type="button" class="ghost" id="focus-cancel">Cancel</button>
+      <button type="button" class="ghost" id="focus-reset">Reset</button>
+      <span class="msg" id="focus-msg" role="status"></span>
+    </div>
+  </dialog>
+
+  <script type="module" src="admin.js"></script>
+</body>
+</html>

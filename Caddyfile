@@ -1,0 +1,10 @@
+# One site, automatic HTTPS. DOMAIN comes from .env (needs a DNS A record pointing at this VM's IP).
+# Caddy forwards X-Forwarded-Proto, which is what makes the admin cookie "Secure".
+{$DOMAIN} {
+	encode zstd gzip
+	header {
+		Strict-Transport-Security "max-age=31536000"
+		-Server
+	}
+	reverse_proxy barry:3000
+}

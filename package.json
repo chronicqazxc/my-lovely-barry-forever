@@ -1,0 +1,20 @@
+{
+  "name": "my-lovely-barry-forever",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Memorial website for Barry (2011-2026)",
+  "type": "module",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "ADMIN_PASSWORD=${ADMIN_PASSWORD:-admin} node --watch server/index.js",
+    "check:i18n": "node scripts/check-i18n.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "multer": "^2.0.0",
+    "sharp": "^0.35.5"
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "name": "Barry",
+  "lang.label": "Language",
+  "theme.light": "Light",
+  "theme.dark": "Dark",
+  "theme.toggle": "Switch to {mode} theme",
+  "meta.title": "Barry, Forever",
+  "meta.description": "In loving memory of Barry, a Jack Russell Terrier, 2011–2026.",
+  "hero.breed": "Female Jack Russell Terrier",
+  "hero.tagline": "Forever our good girl.",
+  "age.template": "She shared {y}, {m} and {d} with us.",
+  "unit.year_one": "{n} year",
+  "unit.year_other": "{n} years",
+  "unit.month_one": "{n} month",
+  "unit.month_other": "{n} months",
+  "unit.day_one": "{n} day",
+  "unit.day_other": "{n} days",
+  "section.story": "Her Story",
+  "section.loved": "Things She Loved",
+  "section.timeline": "Her Life",
+  "section.gallery": "Gallery",
+  "gallery.empty": "Photos and videos will be added soon.",
+  "common.close": "Close",
+  "lightbox.prev": "Previous",
+  "lightbox.next": "Next",
+  "messages.empty": "Be the first to leave a message.",
+  "form.name": "Your name",
+  "form.message": "Write a message for Barry…",
+  "form.submit": "Send",
+  "form.sending": "Sending…",
+  "form.thanks": "Thank you. Your message will appear here once it has been reviewed.",
+  "form.error": "Sorry, something went wrong. Please try again later.",
+  "form.limit": "Too many messages. Please try again later.",
+  "form.tooLong": "Your message is too long. Please keep it under {n} characters.",
+  "form.full": "The guestbook is full, so we can't take new messages right now. Thank you for all the love.",
+  "form.busy": "Too many photos are waiting to be reviewed. Please try again later, or send your message without a photo.",
+  "form.pending": "Many messages are waiting to be reviewed, so we can't take new ones right now. Please try again later.",
+  "section.messages": "Messages from Friends & Family",
+  "form.photo": "Add a photo of Barry (optional)",
+  "form.photoRemove": "Remove photo",
+  "form.badPhoto": "That file isn't a supported image (JPG, PNG, WebP or GIF).",
+  "form.photoTooLarge": "That photo is too large. Please choose one under 8 MB.",
+  "pagination.label": "Pages",
+  "pagination.prev": "Previous",
+  "pagination.next": "Next",
+  "pagination.page": "Page {n}",
+  "hero.memory": "In loving memory",
+  "hero.scroll": "Scroll",
+  "nav.story": "Story",
+  "nav.photos": "Gallery",
+  "nav.memories": "Memories",
+  "nav.messages": "Messages",
+  "social.instagram": "More of Barry on Instagram",
+  "section.diary": "Memories with Barry",
+  "diary.open": "Read the full memory",
+  "diary.play": "Play the video",
+  "comments.edited": "(edited {date})",
+  "diary.map": "Open in maps",
+  "footer": "In loving memory of Barry · 2011 – 2026",
+  "content": {
+    "story": [
+      "Barry was born on August 20, 2011, and filled fifteen years with energy, stubbornness, and love. Small in size but enormous in spirit, she was every bit a Jack Russell.",
+      "She was part of every ordinary day, and those days became our most treasured memories."
+    ],
+    "loved": [
+      "Chasing anything that moves",
+      "Sunny spots on the floor",
+      "Long walks",
+      "Treats, always treats"
+    ],
+    "timeline": [
+      {
+        "year": "2011",
+        "text": "Barry was born on August 20."
+      },
+      {
+        "year": "2026",
+        "text": "On October 4, she crossed the rainbow bridge."
+      }
+    ],
+    "tribute": "Until we meet again at the end of the rainbow bridge, run free, sweet girl."
+  }
+}
