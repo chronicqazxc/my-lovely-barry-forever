@@ -1,6 +1,6 @@
 # Barry, Forever
 
-A gentle memorial website for Barry, a Jack Russell Terrier (2011–2026).
+Memorial site for Barry, a female Jack Russell Terrier (2011-08-20 – 2026-10-04).
 
 https://barry.waynehsiao.app
 
