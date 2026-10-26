@@ -53,7 +53,7 @@ case "$MODE" in
     ;;
   all)
     echo "==> Building the image locally for linux/amd64..."
-    docker buildx build --platform linux/amd64 -t barry:latest --load "$ROOT"
+    docker buildx build --pull --platform linux/amd64 -t barry:latest --load "$ROOT"
     echo "==> Saving + shipping the image..."
     TMP="$(mktemp -t barry-image.XXXXXX)"
     docker save barry:latest | gzip > "$TMP"
